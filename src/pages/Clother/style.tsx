@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
 import { Color } from '../../styles/variables';
 
-export const MainContainer = styled.View`
+export const ClotherContainer = styled.View`
   flex: 1;
   background-color: ${Color.LIGHT_BACKGROUND};
   align-items: center;

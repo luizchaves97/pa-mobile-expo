@@ -1,30 +1,20 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import MainScreen from '../pages/Main';
-import { Color } from '../styles/variables';
+import TabsRouter from './tabs';
+import StacksRouter from './stacks';
 
-export enum RoutesName {
-  HOME = 'home',
+export enum RouteName {
+  FEED = 'feed',
+  ORDER = 'order',
+  STORE = 'store',
+  CLOTHER = 'clother',
+  PROFILE = 'profile',
+  STACK = 'stack',
 }
 
 const Routes = () => {
-  const RouterStack = createStackNavigator();
-
-  return (
-    <RouterStack.Navigator
-      initialRouteName={RoutesName.HOME}
-      screenOptions={{
-        headerStyle: {
-          backgroundColor: Color.PRIMARY,
-        },
-        headerTintColor: Color.WHITE,
-        headerBackTitleVisible: false,
-      }}
-    >
-      <RouterStack.Screen name={RoutesName.HOME} component={MainScreen} />
-    </RouterStack.Navigator>
-  );
+  return <TabsRouter />;
 };
 
 export default Routes;
