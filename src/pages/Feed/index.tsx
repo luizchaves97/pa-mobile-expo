@@ -1,13 +1,14 @@
 import React from 'react';
-import { FeedContainer, Title } from './style';
+import { FeedContainer } from './style';
 import {
   StackNavigationProp,
   createStackNavigator,
 } from '@react-navigation/stack';
 import { RouteName } from '../../routes';
-import { Button } from 'react-native';
-import { Color } from '../../styles/variables';
 import ClotherScreen from '../Clother';
+import ClotherCard from '../../components/ClotherCard';
+import { ScrollView } from 'react-native-gesture-handler';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 type FeedScreenStackParamList = {
   [RouteName.FEED]: {};
@@ -36,12 +37,64 @@ export const FeedScreenStack = () => {
 const FeedScreen = ({ navigation }: FeedScreenProps) => {
   return (
     <FeedContainer>
-      <Title>Feed Page!</Title>
-      <Button
-        title="Go to clother"
-        onPress={() => navigation.navigate(RouteName.CLOTHER, {})}
-        color={Color.PRIMARY}
-      />
+      <SafeAreaView>
+        <ScrollView>
+          <ClotherCard
+            clother={{
+              name: 'Roupa nova',
+              price: 12.2,
+              image:
+                'https://ph-cdn1.ecosweb.com.br/imagens01/foto/moda-feminina/vestido-curto/vestido-evase-com-estampa-poa-vermelho_308981_600_1.jpg',
+            }}
+            onClick={() => navigation.navigate(RouteName.CLOTHER, {})}
+          />
+          <ClotherCard
+            clother={{
+              name: 'Roupa nova',
+              price: 12.2,
+              image:
+                'https://ph-cdn1.ecosweb.com.br/imagens01/foto/moda-feminina/vestido-curto/vestido-evase-com-estampa-poa-vermelho_308981_600_1.jpg',
+            }}
+            onClick={() => navigation.navigate(RouteName.CLOTHER, {})}
+          />
+          <ClotherCard
+            clother={{
+              name: 'Roupa nova',
+              price: 12.2,
+              image:
+                'https://ph-cdn1.ecosweb.com.br/imagens01/foto/moda-feminina/vestido-curto/vestido-evase-com-estampa-poa-vermelho_308981_600_1.jpg',
+            }}
+            onClick={() => navigation.navigate(RouteName.CLOTHER, {})}
+          />
+          <ClotherCard
+            clother={{
+              name: 'Roupa nova',
+              price: 12.2,
+              image:
+                'https://ph-cdn1.ecosweb.com.br/imagens01/foto/moda-feminina/vestido-curto/vestido-evase-com-estampa-poa-vermelho_308981_600_1.jpg',
+            }}
+            onClick={() => navigation.navigate(RouteName.CLOTHER, {})}
+          />
+          <ClotherCard
+            clother={{
+              name: 'Roupa nova',
+              price: 12.2,
+              image:
+                'https://ph-cdn1.ecosweb.com.br/imagens01/foto/moda-feminina/vestido-curto/vestido-evase-com-estampa-poa-vermelho_308981_600_1.jpg',
+            }}
+            onClick={() => navigation.navigate(RouteName.CLOTHER, {})}
+          />
+          <ClotherCard
+            clother={{
+              name: 'Roupa nova',
+              price: 12.2,
+              image:
+                'https://ph-cdn1.ecosweb.com.br/imagens01/foto/moda-feminina/vestido-curto/vestido-evase-com-estampa-poa-vermelho_308981_600_1.jpg',
+            }}
+            onClick={() => navigation.navigate(RouteName.CLOTHER, {})}
+          />
+        </ScrollView>
+      </SafeAreaView>
     </FeedContainer>
   );
 };
