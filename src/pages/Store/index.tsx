@@ -4,7 +4,7 @@ import { StoreContainer, Title } from './style';
 const StoreScreen = () => {
   return (
     <StoreContainer>
-      <Title>Store Pag!</Title>
+      <Title>Store Page!</Title>
     </StoreContainer>
   );
 };

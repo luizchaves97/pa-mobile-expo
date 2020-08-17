@@ -1,20 +1,33 @@
 import React from 'react';
-import { View, Image, Text, GestureResponderEvent } from 'react-native';
+import {
+  View,
+  Image,
+  Text,
+  GestureResponderEvent,
+  StyleProp,
+  ViewStyle,
+} from 'react-native';
 import { Clother } from '../../types';
-import { Color } from '../../styles/variables';
 import { formatMoney } from '../../services/utils';
+import {
+  ClotherCardContainer,
+  ClotherCardImage,
+  ClotherCardTitle,
+  ClotherCardPrice,
+} from './style';
 
 type ClotherCardProps = {
   clother: Partial<Clother>;
   onClick?: () => void;
+  style?: StyleProp<ViewStyle>;
 };
 
-const ClotherCard = ({ clother, onClick }: ClotherCardProps) => {
+const ClotherCard = ({ clother, onClick, style }: ClotherCardProps) => {
   const { name, image, price } = clother;
 
   return (
-    <View onAccessibilityTap={onClick}>
-      <Image
+    <ClotherCardContainer onAccessibilityTap={onClick} style={style}>
+      <ClotherCardImage
         source={{ uri: image }}
         style={{
           width: 150,
@@ -22,9 +35,9 @@ const ClotherCard = ({ clother, onClick }: ClotherCardProps) => {
           resizeMode: 'stretch',
         }}
       />
-      <Text>{name}</Text>
-      <Text>{formatMoney(price || 0)}</Text>
-    </View>
+      <ClotherCardTitle>{name}</ClotherCardTitle>
+      <ClotherCardPrice>{formatMoney(price || 0)}</ClotherCardPrice>
+    </ClotherCardContainer>
   );
 };
 
