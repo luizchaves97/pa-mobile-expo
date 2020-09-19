@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { FeedContainer, FeedList, FeedClotherCard } from './style';
 import {
   StackNavigationProp,
@@ -6,16 +6,12 @@ import {
 } from '@react-navigation/stack';
 import { RouteName } from '../../routes';
 import ClotherScreen from '../Clother';
-import { ScrollView } from 'react-native-gesture-handler';
+import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
 import { SafeAreaView } from 'react-native-safe-area-context';
-
-type FeedScreenStackParamList = {
-  [RouteName.FEED]: {};
-  [RouteName.CLOTHER]: {};
-};
+import { StackParamList } from '../../types';
 
 export type FeedScreenProps = {
-  navigation: StackNavigationProp<FeedScreenStackParamList, RouteName.FEED>;
+  navigation: StackNavigationProp<StackParamList, RouteName.FEED>;
 };
 
 export const FeedScreenStack = () => {
@@ -39,105 +35,18 @@ const FeedScreen = ({ navigation }: FeedScreenProps) => {
       <SafeAreaView>
         <ScrollView>
           <FeedList>
-            <FeedClotherCard
-              clother={{
-                name: 'Titulo da roupa',
-                price: 120,
-                image:
-                  'https://ph-cdn1.ecosweb.com.br/imagens01/foto/moda-feminina/vestido-curto/vestido-evase-com-estampa-poa-vermelho_308981_600_1.jpg',
-              }}
-              onClick={() => navigation.navigate(RouteName.CLOTHER, {})}
-            />
-            <FeedClotherCard
-              clother={{
-                name: 'Titulo da roupa',
-                price: 120,
-                image:
-                  'https://ph-cdn1.ecosweb.com.br/imagens01/foto/moda-feminina/vestido-curto/vestido-evase-com-estampa-poa-vermelho_308981_600_1.jpg',
-              }}
-              onClick={() => navigation.navigate(RouteName.CLOTHER, {})}
-            />
-            <FeedClotherCard
-              clother={{
-                name: 'Titulo da roupa',
-                price: 120,
-                image:
-                  'https://ph-cdn1.ecosweb.com.br/imagens01/foto/moda-feminina/vestido-curto/vestido-evase-com-estampa-poa-vermelho_308981_600_1.jpg',
-              }}
-              onClick={() => navigation.navigate(RouteName.CLOTHER, {})}
-            />
-            <FeedClotherCard
-              clother={{
-                name: 'Titulo da roupa',
-                price: 120,
-                image:
-                  'https://ph-cdn1.ecosweb.com.br/imagens01/foto/moda-feminina/vestido-curto/vestido-evase-com-estampa-poa-vermelho_308981_600_1.jpg',
-              }}
-              onClick={() => navigation.navigate(RouteName.CLOTHER, {})}
-            />
-            <FeedClotherCard
-              clother={{
-                name: 'Titulo da roupa',
-                price: 120,
-                image:
-                  'https://ph-cdn1.ecosweb.com.br/imagens01/foto/moda-feminina/vestido-curto/vestido-evase-com-estampa-poa-vermelho_308981_600_1.jpg',
-              }}
-              onClick={() => navigation.navigate(RouteName.CLOTHER, {})}
-            />
-            <FeedClotherCard
-              clother={{
-                name: 'Titulo da roupa',
-                price: 120,
-                image:
-                  'https://ph-cdn1.ecosweb.com.br/imagens01/foto/moda-feminina/vestido-curto/vestido-evase-com-estampa-poa-vermelho_308981_600_1.jpg',
-              }}
-              onClick={() => navigation.navigate(RouteName.CLOTHER, {})}
-            />
-            <FeedClotherCard
-              clother={{
-                name: 'Titulo da roupa',
-                price: 120,
-                image:
-                  'https://ph-cdn1.ecosweb.com.br/imagens01/foto/moda-feminina/vestido-curto/vestido-evase-com-estampa-poa-vermelho_308981_600_1.jpg',
-              }}
-              onClick={() => navigation.navigate(RouteName.CLOTHER, {})}
-            />
-            <FeedClotherCard
-              clother={{
-                name: 'Titulo da roupa',
-                price: 120,
-                image:
-                  'https://ph-cdn1.ecosweb.com.br/imagens01/foto/moda-feminina/vestido-curto/vestido-evase-com-estampa-poa-vermelho_308981_600_1.jpg',
-              }}
-              onClick={() => navigation.navigate(RouteName.CLOTHER, {})}
-            />
-            <FeedClotherCard
-              clother={{
-                name: 'Titulo da roupa',
-                price: 120,
-                image:
-                  'https://ph-cdn1.ecosweb.com.br/imagens01/foto/moda-feminina/vestido-curto/vestido-evase-com-estampa-poa-vermelho_308981_600_1.jpg',
-              }}
-              onClick={() => navigation.navigate(RouteName.CLOTHER, {})}
-            />
-            <FeedClotherCard
-              clother={{
-                name: 'Titulo da roupa',
-                price: 120,
-                image:
-                  'https://ph-cdn1.ecosweb.com.br/imagens01/foto/moda-feminina/vestido-curto/vestido-evase-com-estampa-poa-vermelho_308981_600_1.jpg',
-              }}
-              onClick={() => navigation.navigate(RouteName.CLOTHER, {})}
-            />
-            <FeedClotherCard
-              clother={{
-                name: 'Titulo da roupa',
-                price: 120,
-                image:
-                  'https://ph-cdn1.ecosweb.com.br/imagens01/foto/moda-feminina/vestido-curto/vestido-evase-com-estampa-poa-vermelho_308981_600_1.jpg',
-              }}
-              onClick={() => navigation.navigate(RouteName.CLOTHER, {})}
-            />
+            <TouchableOpacity
+              onPress={() => navigation.navigate(RouteName.CLOTHER, { id: 1 })}
+            >
+              <FeedClotherCard
+                clother={{
+                  name: 'Titulo da roupa',
+                  price: 120,
+                  image:
+                    'https://ph-cdn1.ecosweb.com.br/imagens01/foto/moda-feminina/vestido-curto/vestido-evase-com-estampa-poa-vermelho_308981_600_1.jpg',
+                }}
+              />
+            </TouchableOpacity>
           </FeedList>
         </ScrollView>
       </SafeAreaView>

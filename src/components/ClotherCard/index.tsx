@@ -1,12 +1,5 @@
 import React from 'react';
-import {
-  View,
-  Image,
-  Text,
-  GestureResponderEvent,
-  StyleProp,
-  ViewStyle,
-} from 'react-native';
+import { StyleProp, ViewStyle } from 'react-native';
 import { Clother } from '../../types';
 import { formatMoney } from '../../services/utils';
 import {

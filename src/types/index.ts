@@ -1,3 +1,5 @@
+import { RouteName } from '../routes';
+
 export type ID = number | string;
 
 export type Clother = {
@@ -9,4 +11,12 @@ export type Clother = {
   color: string;
   description: string;
   image: string;
+};
+
+export type StackParamList = {
+  [RouteName.FEED]: {};
+  [RouteName.ORDER]: {};
+  [RouteName.CLOTHER]: {
+    id: number;
+  };
 };

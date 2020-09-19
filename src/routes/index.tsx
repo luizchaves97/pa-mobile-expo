@@ -2,7 +2,6 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import TabsRouter from './tabs';
-import StacksRouter from './stacks';
 
 export enum RouteName {
   FEED = 'feed',
