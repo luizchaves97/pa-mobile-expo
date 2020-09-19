@@ -18,7 +18,6 @@ import { StackParamList } from '../../types';
 import { ScrollView } from 'react-native-gesture-handler';
 import { RouteProp } from '@react-navigation/native';
 import { RouteName } from '../../routes';
-import { Text, Image, View, Button } from 'react-native';
 
 const ClotherScreen = ({
   route,
