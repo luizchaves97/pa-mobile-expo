@@ -25,7 +25,6 @@ const ClotherCard = ({ clother, onClick, style }: ClotherCardProps) => {
         style={{
           width: 150,
           height: 200,
-          resizeMode: 'stretch',
         }}
       />
       <ClotherCardTitle>{name}</ClotherCardTitle>

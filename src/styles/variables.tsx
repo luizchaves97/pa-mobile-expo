@@ -3,4 +3,5 @@ export enum Color {
   INACTIVE_TAB = '#BBB',
   WHITE = '#FFF',
   LIGHT_BACKGROUND = '#f6f6f6',
+  BORDER_DEFAULT = '#e9eaed',
 }
