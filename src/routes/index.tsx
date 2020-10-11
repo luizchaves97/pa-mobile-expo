@@ -8,6 +8,7 @@ export enum RouteName {
   ORDER = 'order',
   STORE = 'store',
   CLOTHER = 'clother',
+  ADD_CLOTHER = 'add-clother',
   PROFILE = 'profile',
   STACK = 'stack',
 }

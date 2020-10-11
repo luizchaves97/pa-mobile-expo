@@ -3,7 +3,6 @@ import { Color } from '../../styles/variables';
 import ClotherCard from '../../components/ClotherCard';
 
 export const FeedContainer = styled.View`
-  flex: 1;
   background-color: ${Color.LIGHT_BACKGROUND};
 `;
 
@@ -13,7 +12,7 @@ export const Title = styled.Text`
 `;
 
 export const FeedList = styled.View`
-  margin: 16px 32px;
+  margin: 16px;
   flex: 1;
   flex-direction: row;
   flex-wrap: wrap;
@@ -22,4 +21,7 @@ export const FeedList = styled.View`
 
 export const FeedClotherCard = styled(ClotherCard)`
   margin-bottom: 26px;
+  width: 100%;
+  height: auto;
+  max-width: 180px;
 `;

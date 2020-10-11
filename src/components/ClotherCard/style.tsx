@@ -1,6 +1,8 @@
 import styled from 'styled-components/native';
 
-export const ClotherCardContainer = styled.View``;
+export const ClotherCardContainer = styled.View`
+  width: 100%;
+`;
 
 export const ClotherCardImage = styled.Image`
   border-radius: 10px;

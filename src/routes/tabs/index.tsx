@@ -5,7 +5,7 @@ import { FontAwesome5 } from '@expo/vector-icons';
 import { RouteName } from '../index';
 
 import { FeedScreenStack } from '../../pages/Feed';
-import StoreScreen from '../../pages/Store';
+import StoreScreen, { StoreScreenStack } from '../../pages/Store';
 import OrderScreen from '../../pages/Order';
 import ProfileScreen from '../../pages/Profile';
 import { Color } from '../../styles/variables';
@@ -45,7 +45,7 @@ const TabsRouter = () => {
       />
       <Tab.Screen
         name={RouteName.STORE}
-        component={StoreScreen}
+        component={StoreScreenStack}
         options={{ title: 'Minha Loja' }}
       />
       <Tab.Screen

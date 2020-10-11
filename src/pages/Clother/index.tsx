@@ -18,43 +18,44 @@ import { StackParamList } from '../../types';
 import { ScrollView } from 'react-native-gesture-handler';
 import { RouteProp } from '@react-navigation/native';
 import { RouteName } from '../../routes';
+import { formatMoney } from '../../services/utils';
 
 const ClotherScreen = ({
   route,
 }: {
   route: RouteProp<StackParamList, RouteName.CLOTHER>;
 }) => {
-  const { id } = route.params;
+  const { data } = route.params;
+  const { image, price, discout_price, size, description, color, name } = data;
   return (
     <ClotherContainer>
       <ScrollView>
         <Header>
           <ImageClother
             source={{
-              uri:
-                'https://ph-cdn1.ecosweb.com.br/imagens01/foto/moda-feminina/vestido-curto/vestido-evase-com-estampa-poa-vermelho_308981_600_1.jpg',
+              uri: image,
             }}
           />
-          <Title>Nome da roupa</Title>
+          <Title>{name}</Title>
         </Header>
         <Info>
           <InfoCard>
             <Label>Preço:</Label>
-            <Price>R$700</Price>
-            <DiscountPrice>R$800</DiscountPrice>
+            <Price>{formatMoney(price || 0)}</Price>
+            <DiscountPrice>{formatMoney(discout_price || 0)}</DiscountPrice>
           </InfoCard>
           <InfoCard>
             <Label>Tamanho:</Label>
-            <InfoText>P</InfoText>
+            <InfoText>{size}</InfoText>
           </InfoCard>
           <InfoCard>
             <Label>Cor:</Label>
-            <InfoText>Azul</InfoText>
+            <InfoText>{color}</InfoText>
           </InfoCard>
         </Info>
         <Description>
           <Label>Descrição:</Label>
-          <InfoText>Descrição da roupa</InfoText>
+          <InfoText>{description}</InfoText>
         </Description>
         <RentButton>
           <RentButtonText>Alugar roupa</RentButtonText>

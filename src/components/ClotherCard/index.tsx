@@ -16,19 +16,21 @@ type ClotherCardProps = {
 };
 
 const ClotherCard = ({ clother, onClick, style }: ClotherCardProps) => {
-  const { name, image, price } = clother;
+  const { name, image, price, discout_price } = clother;
 
   return (
     <ClotherCardContainer onAccessibilityTap={onClick} style={style}>
       <ClotherCardImage
         source={{ uri: image }}
         style={{
-          width: 150,
-          height: 200,
+          width: 180,
+          height: 230,
         }}
       />
       <ClotherCardTitle>{name}</ClotherCardTitle>
-      <ClotherCardPrice>{formatMoney(price || 0)}</ClotherCardPrice>
+      <ClotherCardPrice>
+        {formatMoney(discout_price || price || 0)}
+      </ClotherCardPrice>
     </ClotherCardContainer>
   );
 };

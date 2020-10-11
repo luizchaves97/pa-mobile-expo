@@ -9,6 +9,7 @@ import ClotherScreen from '../Clother';
 import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { StackParamList } from '../../types';
+import { mockClotherData } from '../../services/mocks';
 
 export type FeedScreenProps = {
   navigation: StackNavigationProp<StackParamList, RouteName.FEED>;
@@ -35,18 +36,14 @@ const FeedScreen = ({ navigation }: FeedScreenProps) => {
       <SafeAreaView>
         <ScrollView>
           <FeedList>
-            <TouchableOpacity
-              onPress={() => navigation.navigate(RouteName.CLOTHER, { id: 1 })}
-            >
-              <FeedClotherCard
-                clother={{
-                  name: 'Titulo da roupa',
-                  price: 120,
-                  image:
-                    'https://ph-cdn1.ecosweb.com.br/imagens01/foto/moda-feminina/vestido-curto/vestido-evase-com-estampa-poa-vermelho_308981_600_1.jpg',
-                }}
-              />
-            </TouchableOpacity>
+            {mockClotherData.map((data) => (
+              <TouchableOpacity
+                onPress={() => navigation.navigate(RouteName.CLOTHER, { data })}
+                key={data.id}
+              >
+                <FeedClotherCard clother={data} />
+              </TouchableOpacity>
+            ))}
           </FeedList>
         </ScrollView>
       </SafeAreaView>

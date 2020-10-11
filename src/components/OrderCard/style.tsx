@@ -10,7 +10,7 @@ export const Content = styled.View`
 
 export const Container = styled.View`
   flex-direction: row;
-  justify-content: space-between
+  justify-content: space-between;
   width: 100%;
   border: 1px solid ${Color.BORDER_DEFAULT};
   border-radius: 6px;
@@ -21,7 +21,7 @@ export const Container = styled.View`
 `;
 
 export const Title = styled.Text`
-  font-size: 20px;
+  font-size: 16px;
 `;
 
 export const PriceText = styled.Text`

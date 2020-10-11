@@ -1,6 +1,6 @@
 import { RouteName } from '../routes';
 
-export type ID = number | string;
+export type ID = number;
 
 export type Clother = {
   id: ID;
@@ -15,8 +15,10 @@ export type Clother = {
 
 export type StackParamList = {
   [RouteName.FEED]: {};
+  [RouteName.STORE]: {};
   [RouteName.ORDER]: {};
   [RouteName.CLOTHER]: {
-    id: number;
+    data: Partial<Clother>;
   };
+  [RouteName.ADD_CLOTHER]: {};
 };
