@@ -6,7 +6,7 @@ import { RouteName } from '../index';
 
 import { FeedScreenStack } from '../../pages/Feed';
 import StoreScreen, { StoreScreenStack } from '../../pages/Store';
-import OrderScreen from '../../pages/Order';
+import OrderScreen, { OrdercreenStack } from '../../pages/Order';
 import ProfileScreen from '../../pages/Profile';
 import { Color } from '../../styles/variables';
 
@@ -50,7 +50,7 @@ const TabsRouter = () => {
       />
       <Tab.Screen
         name={RouteName.ORDER}
-        component={OrderScreen}
+        component={OrdercreenStack}
         options={{ title: 'Pedidos' }}
       />
       <Tab.Screen

@@ -1,4 +1,4 @@
-import { Clother } from '../types';
+import { Clother, Order } from '../types';
 
 export const mockClotherData: Clother[] = [
   {
@@ -69,7 +69,7 @@ export const mockClotherData: Clother[] = [
   },
 ];
 
-export const mockOrderData = [
+export const mockOrderData: Order[] = [
   {
     id: 1,
     order: {

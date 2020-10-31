@@ -13,12 +13,23 @@ export type Clother = {
   image: string;
 };
 
+export type Order = {
+  id: ID;
+  order: {
+    clother: Clother;
+    date: string;
+  }
+};
+
 export type StackParamList = {
   [RouteName.FEED]: {};
   [RouteName.STORE]: {};
   [RouteName.ORDER]: {};
+  [RouteName.ORDER_DETAIL]: {
+    data: Order;
+  };
   [RouteName.CLOTHER]: {
-    data: Partial<Clother>;
+    data: Clother;
   };
   [RouteName.ADD_CLOTHER]: {};
 };

@@ -6,6 +6,7 @@ import TabsRouter from './tabs';
 export enum RouteName {
   FEED = 'feed',
   ORDER = 'order',
+  ORDER_DETAIL = 'order-detail',
   STORE = 'store',
   CLOTHER = 'clother',
   ADD_CLOTHER = 'add-clother',
