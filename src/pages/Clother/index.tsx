@@ -19,14 +19,22 @@ import { ScrollView } from 'react-native-gesture-handler';
 import { RouteProp } from '@react-navigation/native';
 import { RouteName } from '../../routes';
 import { formatMoney } from '../../services/utils';
+import { useCartContext } from '../../context/cart';
+import CartCount from '../../components/CartCount';
 
 const ClotherScreen = ({
   route,
 }: {
   route: RouteProp<StackParamList, RouteName.CLOTHER>;
 }) => {
+  const { addCart } = useCartContext();
   const { data } = route.params;
   const { image, price, discout_price, size, description, color, name } = data;
+
+  const handleAddCart = () => {
+    addCart(data);
+  }
+
   return (
     <ClotherContainer>
       <ScrollView>
@@ -57,7 +65,7 @@ const ClotherScreen = ({
           <Label>Descrição:</Label>
           <InfoText>{description}</InfoText>
         </Description>
-        <RentButton>
+        <RentButton onPress={handleAddCart}>
           <RentButtonText>Alugar roupa</RentButtonText>
         </RentButton>
       </ScrollView>

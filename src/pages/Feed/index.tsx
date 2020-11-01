@@ -10,6 +10,8 @@ import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { StackParamList } from '../../types';
 import { mockClotherData } from '../../services/mocks';
+import { useCartContext } from '../../context/cart';
+import CartCount from '../../components/CartCount';
 
 export type FeedScreenProps = {
   navigation: StackNavigationProp<StackParamList, RouteName.FEED>;
@@ -31,9 +33,13 @@ export const FeedScreenStack = () => {
 };
 
 const FeedScreen = ({ navigation }: FeedScreenProps) => {
+  const {cart} = useCartContext();
   return (
     <FeedContainer>
       <SafeAreaView>
+        {cart.length > 0 && (
+          <CartCount count={cart.length} />
+        )}
         <ScrollView>
           <FeedList>
             {mockClotherData.map((data) => (

@@ -8,6 +8,7 @@ import { Nunito_400Regular, useFonts } from '@expo-google-fonts/nunito';
 import './config/ReactotronConfig';
 import Routes from './routes';
 import { Color } from './styles/variables';
+import { CartContextProvider } from './context/cart';
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -19,9 +20,11 @@ export default function App() {
   }
 
   return (
-    <NavigationContainer>
-      <Routes />
-      <StatusBar style="dark" backgroundColor={Color.WHITE} />
-    </NavigationContainer>
+    <CartContextProvider>
+      <NavigationContainer>
+        <Routes />
+        <StatusBar style="dark" backgroundColor={Color.WHITE} />
+      </NavigationContainer>
+    </CartContextProvider>
   );
 }

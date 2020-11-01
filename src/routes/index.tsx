@@ -2,6 +2,8 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import TabsRouter from './tabs';
+import { useCartContext } from '../context/cart';
+import CartCount from '../components/CartCount';
 
 export enum RouteName {
   FEED = 'feed',
@@ -15,7 +17,7 @@ export enum RouteName {
 }
 
 const Routes = () => {
-  return <TabsRouter />;
+  return <TabsRouter />
 };
 
 export default Routes;

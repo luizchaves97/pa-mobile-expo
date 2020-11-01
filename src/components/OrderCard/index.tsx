@@ -27,7 +27,7 @@ const OrderCard = ({ order }: OrderCardProps) => {
           }}
         />
         <HeaderText>
-          <DateText>{order.date.toString()}</DateText>
+          <DateText>{order.date}</DateText>
           <Title>{order.clother.name}</Title>
         </HeaderText>
       </Content>
