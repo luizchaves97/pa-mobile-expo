@@ -22,8 +22,6 @@ const CartContext = createContext(DEFAULT_STATE);
 export const CartContextProvider = ({ children }: CartContextProviderProps) => {
   const [cart, setCart] = useState<Clother[]>([]);
 
-  console.tron.log(cart);
-
   const addCart = (product: Clother) => {
     setCart([...cart, product])
   }
